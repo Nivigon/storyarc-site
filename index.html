@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StoryArc</title>
+<meta name="description" content="StoryArc maakt verhalen die je buiten speelt. Binnenkort meer.">
+<meta property="og:title" content="StoryArc">
+<meta property="og:description" content="Verhalen die je buiten speelt. Binnenkort meer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://storyarc.nl">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --inkt: #101d1b;
+    --inkt-diep: #0a1413;
+    --papier: #e9e3d4;
+    --papier-zacht: #9fa79c;
+    --brons: #b8713f;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; height: 100%; }
+
+  body {
+    background: radial-gradient(120% 90% at 50% 20%, #162724 0%, var(--inkt) 45%, var(--inkt-diep) 100%);
+    color: var(--papier);
+    font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .doek {
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+    opacity: 0;
+    animation: verschijn 1.8s ease 0.3s forwards;
+  }
+
+  @keyframes verschijn { to { opacity: 1; } }
+
+  .logo {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .woordmerk {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .woordmerk[hidden] { display: none; }
+
+  .regel {
+    margin: 2rem auto 0;
+    max-width: 28em;
+    font-size: 1.15rem;
+  }
+
+  .status {
+    margin: 2.4rem 0 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    color: var(--papier-zacht);
+    font-style: italic;
+  }
+
+  .voet {
+    margin: 3.5rem 0 0;
+    font-size: 0.95rem;
+    color: var(--papier-zacht);
+  }
+
+  .voet a {
+    color: var(--papier-zacht);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184, 113, 63, 0.6);
+    padding-bottom: 1px;
+  }
+
+  .voet a:hover, .voet a:focus-visible {
+    color: var(--papier);
+    border-bottom-color: var(--brons);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--brons);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .doek { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="doek">
+
+    <img class="logo" src="logo.png" alt="StoryArc"
+         onerror="this.remove(); document.getElementById('woordmerk').hidden = false;">
+    <h1 class="woordmerk" id="woordmerk" hidden>StoryArc</h1>
+
+    <p class="regel">Verhalen die je buiten speelt, met je vrienden of met je collega's.</p>
+
+    <p class="status">Binnenkort hier</p>
+
+    <p class="voet">
+      Nieuwsgierig? Kijk vast bij
+      <a href="https://zilverweide.nl">De Rozen van Zilverweide</a>.
+    </p>
+
+  </main>
+
+</body>
+</html>
